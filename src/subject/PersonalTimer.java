@@ -5,6 +5,7 @@
  */
 package subject;
 
+import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
 import observer.Observer;
@@ -13,13 +14,16 @@ import observer.Observer;
  *
  * @author samuel
  */
-public class PersonalTimer implements Subject{
-    private Timer timer;
+public class PersonalTimer implements Subject {
+    private final LinkedList<Observer> observers;
+    private final Timer timer;
     private int seconds;
     private int minutes;
     private int hours;
     
     public PersonalTimer() {
+        observers = new LinkedList<>();
+        
         seconds = 0;
         minutes = 0;
         hours = 0;
@@ -32,7 +36,7 @@ public class PersonalTimer implements Subject{
                 seconds++;
                 if (seconds == 59) seconds = 0;
             }
-        }, 0, 1000);
+        }, 1000, 1000);
         
         timer.schedule(new TimerTask() {
             @Override
@@ -52,17 +56,24 @@ public class PersonalTimer implements Subject{
     
     @Override
     public String toString() {
-        return hours + ":" + minutes + ":" + seconds;
+        return String.format("%02dh %02dm %02ds", hours, minutes, seconds);
     }
     
     @Override
     public void attach(Observer o) {
-        
+        observers.add(o);
     }
     
     @Override
     public void detach(Observer o) {
-        
+        observers.remove(o);
+    }
+    
+    @Override
+    public void notifyObservers() {
+        observers.stream().forEach((o) -> {
+            o.update();
+        });
     }
     
 }
