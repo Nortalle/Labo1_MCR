@@ -1,3 +1,8 @@
+package subject;
+
+
+import observer.Observer;
+
 /**
  *
  * @author Vincent Guidoux
