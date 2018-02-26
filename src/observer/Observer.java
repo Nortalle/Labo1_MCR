@@ -1,9 +1,8 @@
 package observer;
-
 /**
  *
  * @author Vincent Guidoux
  */
 public interface Observer {
-   public void update();
+   public void update(int time);
 }
