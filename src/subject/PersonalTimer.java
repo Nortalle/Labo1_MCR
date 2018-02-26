@@ -1,8 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ -----------------------------------------------------------------------------------
+ Laboratoire : 1
+ Fichier     : PersonalTimer.java
+ Auteur(s)   : Samuel Mayoer et Vincent Guidoux
+ Date        : 04.03.2018
+
+ But         : <à compléter>
+
+ Remarque(s) : <à compléter>
+
+ Java : 1.8.0_161
+ -----------------------------------------------------------------------------------
+*/
 package subject;
 
 import java.util.LinkedList;
@@ -10,10 +19,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 import observer.Observer;
 
-/**
- *
- * @author samuel
- */
 public class PersonalTimer implements Subject {
     private final LinkedList<Observer> observers;
     private final Timer timer;

@@ -1,15 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ -----------------------------------------------------------------------------------
+ Laboratoire : 1
+ Fichier     : JNumericTimer.java
+ Auteur(s)   : Samuel Mayor et Vincent Guidoux
+ Date        : 04.03.2018
+
+ But         : <à compléter>
+
+ Remarque(s) : <à compléter>
+
+ Java : 1.8.0_161
+ -----------------------------------------------------------------------------------
+*/
 package observer;
 import javax.swing.*;
 
-/**
- *
- * @author samuel
- */
 public class JNumericTimer extends DisplayClock {
     JLabel labelTime;
     
@@ -33,6 +38,4 @@ public class JNumericTimer extends DisplayClock {
         setSize(400,200);
         setVisible(true);
     }
-    
-    
 }

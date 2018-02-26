@@ -1,3 +1,17 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 1
+ Fichier     : Controller.java
+ Auteur(s)   : Samuel Mayor et Vincent Guidoux
+ Date        : 04.03.2018
+
+ But         : <à compléter>
+
+ Remarque(s) : <à compléter>
+
+ Java : 1.8.0_161
+ -----------------------------------------------------------------------------------
+*/
 package subject;
 
 import java.awt.GridBagConstraints;
@@ -12,10 +26,6 @@ import observer.JClockTimer;
 import observer.JNumericTimer;
 import observer.Observer;
 
-/**
- *
- * @author samuel
- */
 public class Controller extends JFrame {
     private final GridBagConstraints constraints = new GridBagConstraints();
 

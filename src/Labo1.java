@@ -1,18 +1,22 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 1
+ Fichier     : Labo1.java
+ Auteur(s)   : Samuel Mayoer et Vincent Guidoux
+ Date        : 04.03.2018
 
+ But         : <à compléter>
+
+ Remarque(s) : <à compléter>
+
+ Java : 1.8.0_161
+ -----------------------------------------------------------------------------------
+*/
 import observer.JClockTimer;
 import observer.JNumericTimer;
 import subject.Controller;
 import subject.PersonalTimer;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author Vincent Guidoux
- */
 public class Labo1 {
 
     /**
