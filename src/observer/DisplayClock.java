@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------------
  Laboratoire : 1
  Fichier     : DisplayClock.java
- Auteur(s)   : Samuel Mayoer et Vincent Guidoux
+ Auteur(s)   : Samuel Mayor et Vincent Guidoux
  Date        : 04.03.2018
 
  But         : <à compléter>
@@ -14,12 +14,9 @@
 */
 package observer;
 
-import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public abstract class DisplayClock extends JFrame implements Observer {
+public abstract class DisplayClock extends JPanel implements Observer {
     @Override
     public abstract void update(int time);
-    
-    public abstract void init();
-    
 }

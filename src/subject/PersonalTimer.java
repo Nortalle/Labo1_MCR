@@ -21,16 +21,12 @@ import observer.Observer;
 
 public class PersonalTimer implements Subject {
     private final LinkedList<Observer> observers;
-    private final Timer timer;
+    private Timer timer;
     private int time;
+    private boolean paused;
     
-    public PersonalTimer() {
-        observers = new LinkedList<>();
-        
-        time = 0;
-        
+    private void scheduleTimer() {
         timer = new Timer();
-        
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -38,6 +34,16 @@ public class PersonalTimer implements Subject {
                 notifyObservers();
             }
         }, 1000, 1000);
+    }
+    
+    public PersonalTimer() {
+        observers = new LinkedList<>();
+        
+        time = 0;
+        
+        scheduleTimer();
+        
+        paused = false;
     }
     
     public int hours() {
@@ -50,6 +56,23 @@ public class PersonalTimer implements Subject {
     
     public int seconds() {
         return time;
+    }
+    
+    public void reset() {
+        time = 0;
+        notifyObservers();
+    }
+    
+    public void pause() {
+        timer.cancel();
+        paused = true;
+    }
+    
+    public void start() {
+        if (paused) {
+            paused = false;
+            scheduleTimer();
+        }
     }
     
     @Override
