@@ -29,7 +29,7 @@ public class Controller extends JFrame {
 
     JPanel pane = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();
-    PersonalTimer pt = new PersonalTimer();
+    PersonalTimer pt = new PersonalTimer();;
 
     public Controller() {
         add(pane);

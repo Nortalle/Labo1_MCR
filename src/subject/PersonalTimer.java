@@ -13,7 +13,7 @@
  -----------------------------------------------------------------------------------
 */
 package subject;
-
+//Grible
 import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -23,7 +23,7 @@ public class PersonalTimer implements Subject {
     private final LinkedList<Observer> observers;
     private Timer timer;
     private int time;
-    private boolean paused;
+    private boolean paused = true;
     
     private void scheduleTimer() {
         timer = new Timer();
@@ -40,10 +40,6 @@ public class PersonalTimer implements Subject {
         observers = new LinkedList<>();
         
         time = 0;
-        
-        scheduleTimer();
-        
-        paused = false;
     }
     
     public int hours() {
@@ -64,8 +60,11 @@ public class PersonalTimer implements Subject {
     }
     
     public void pause() {
-        timer.cancel();
-        paused = true;
+        if (!paused) {
+            timer.cancel();
+            paused = true;
+        }
+        
     }
     
     public void start() {
