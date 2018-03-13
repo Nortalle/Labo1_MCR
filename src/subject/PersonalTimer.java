@@ -13,7 +13,7 @@
  -----------------------------------------------------------------------------------
 */
 package subject;
-//Grible
+
 import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -52,6 +52,10 @@ public class PersonalTimer implements Subject {
     
     public int seconds() {
         return time;
+    }
+    
+    public boolean paused() {
+        return paused;
     }
     
     public void reset() {

@@ -14,14 +14,15 @@
  */package observer;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
-import javax.swing.ImageIcon;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 import javax.swing.JLabel;
 
 public class JClockTimer extends DisplayClock implements Observer {
-
     private final String image;
     private Image clock;
     private double angleSecond;
@@ -29,13 +30,40 @@ public class JClockTimer extends DisplayClock implements Observer {
     private double angleHour;
 
     public JClockTimer(String image) {
+        JLabel imageContainer = new JLabel();
         this.image = image;
+        clock = Toolkit.getDefaultToolkit().getImage(image);
+        clock = clock.getScaledInstance(getPreferredSize().width, getPreferredSize().height,
+        Image.SCALE_SMOOTH);
+        
+        addComponentListener(new ComponentListener() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                resize();
+            }
+
+            @Override
+            public void componentMoved(ComponentEvent e) {}
+
+            @Override
+            public void componentShown(ComponentEvent e) {}
+
+            @Override
+            public void componentHidden(ComponentEvent e) {}
+        });
+    }
+    
+    public void resize() {
+        clock = clock.getScaledInstance(getWidth(), getWidth(), Image.SCALE_DEFAULT);
+    }
+    
+    public Dimension getPreferredSize()
+    {
+        return new Dimension(300, 300);
     }
 
     @Override
     public void update(int time) {
-        //TODO Je pense qu'il faudrait recevoir l'objet Time plutôt qu'un int
-
         angleSecond = Math.PI * (time % 60) / 30;
         angleMinute = Math.PI * ((time / 60) % 60) / 30;
         angleHour = Math.PI * ((time / 3600) + ((time / 60) % 60) / 60.0) / 6;
@@ -45,10 +73,9 @@ public class JClockTimer extends DisplayClock implements Observer {
 
     @Override
     public void paintComponent(Graphics g) {
-        clock = Toolkit.getDefaultToolkit().getImage(image);
-        clock = clock.getScaledInstance(400, 400, 0);
-        add(new JLabel(new ImageIcon(clock)));
-        g.drawImage(clock, 0, 0, getWidth(), getWidth(), this);
+        if (clock == null) resize();
+        g.drawImage(clock, 0, 0, this);
+        
         //seconds needle
         paintNeedle(angleSecond, 0.8, Color.RED, g);
         //minutes needle
