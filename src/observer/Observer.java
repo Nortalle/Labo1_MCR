@@ -5,15 +5,21 @@
  Auteur(s)   : Samuel Mayor et Vincent Guidoux
  Date        : 04.03.2018
 
- But         : <à compléter>
-
- Remarque(s) : <à compléter>
+ But         : Observer of the Observer model (GoF)
 
  Java : 1.8.0_161
  -----------------------------------------------------------------------------------
 */
 package observer;
 
+import subject.PersonalTimer;
+
 public interface Observer {
-    public void update(int time);
+   
+   /**
+    * This method is called whenever the observed object is changed.
+    * 
+    * @param time    : Subject who changed
+    */
+    public void update(PersonalTimer time);
 }

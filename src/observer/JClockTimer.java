@@ -23,6 +23,7 @@ import java.awt.Toolkit;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import javax.swing.JLabel;
+import subject.PersonalTimer;
 
 public class JClockTimer extends DisplayClock implements Observer {
     private final String image;
@@ -65,10 +66,10 @@ public class JClockTimer extends DisplayClock implements Observer {
     }
 
     @Override
-    public void update(int time) {
-        angleSecond = Math.PI * (time % 60) / 30;
-        angleMinute = Math.PI * ((time / 60) % 60) / 30;
-        angleHour = Math.PI * ((time / 3600) + ((time / 60) % 60) / 60.0) / 6;
+    public void update(PersonalTimer time) {
+        angleSecond = Math.PI * time.seconds() / 30;
+        angleMinute = Math.PI * time.minutes() / 30;
+        angleHour = Math.PI * (time.hours() + time.minutes() / 60.0) / 6;
 
         repaint();
     }

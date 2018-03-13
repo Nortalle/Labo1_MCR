@@ -5,7 +5,7 @@
  Auteur(s)   : Samuel Mayoer et Vincent Guidoux
  Date        : 04.03.2018
 
- But         : <à compléter>
+ But         : Concret Subject of the Observable model (GoF)
 
  Java : 1.8.0_161
  -----------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ public class PersonalTimer implements Subject {
                 time++;
                 notifyObservers();
             }
-        }, 1000, 1000);
+        }, 10, 10);
     }
     
     public PersonalTimer() {
@@ -41,15 +41,15 @@ public class PersonalTimer implements Subject {
     }
     
     public int hours() {
-        return time % 3600;
+        return time / 3600;
     }
     
     public int minutes() {
-        return time % 60;
+        return (time / 60) % 60;
     }
     
     public int seconds() {
-        return time;
+        return time % 60;
     }
     
     public boolean paused() {
@@ -89,7 +89,7 @@ public class PersonalTimer implements Subject {
     @Override
     public void notifyObservers() {
         observers.stream().forEach((o) -> {
-            o.update(time);
+            o.update(this);
         });
     }
 }
