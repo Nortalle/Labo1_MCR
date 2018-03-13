@@ -7,8 +7,6 @@
 
  But         : <à compléter>
 
- Remarque(s) : <à compléter>
-
  Java : 1.8.0_161
  -----------------------------------------------------------------------------------
 */
@@ -94,5 +92,4 @@ public class PersonalTimer implements Subject {
             o.update(time);
         });
     }
-    
 }
