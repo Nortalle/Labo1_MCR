@@ -11,7 +11,9 @@
 
  Java : 1.8.0_161
  -----------------------------------------------------------------------------------
- */package observer;
+ */
+
+package observer;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -53,7 +55,7 @@ public class JClockTimer extends DisplayClock implements Observer {
         });
     }
     
-    public void resize() {
+    private void resize() {
         clock = clock.getScaledInstance(getWidth(), getWidth(), Image.SCALE_DEFAULT);
     }
     

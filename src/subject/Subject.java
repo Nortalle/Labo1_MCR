@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------------
  Laboratoire : 1
  Fichier     : Subject.java
- Auteur(s)   : Samuel Mayoer et Vincent Guidoux
+ Auteur(s)   : Samuel Mayer et Vincent Guidoux
  Date        : 04.03.2018
 
  But         : <à compléter>
