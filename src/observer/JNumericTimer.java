@@ -47,7 +47,7 @@ public class JNumericTimer extends DisplayClock {
      * @param hours     : hours to display
      * @param minutes   : minutes to display
      * @param seconds   : seconds to display
-     * @return    
+     * @return          : formated time to display
      */
     private String formatTime(int hours, int minutes, int seconds) {
         return String.format("%02dh %02dm %02ds", hours, minutes, seconds);

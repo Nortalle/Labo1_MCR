@@ -7,17 +7,18 @@
 
  But         : A class who implements Observer and exdents Jpanel
                So it makes a diplayable and observer clock 
+Remarquess  : It should be named "Display Observer"
 
  Java : 1.8.0_161
  -----------------------------------------------------------------------------------
-*/
+ */
 package observer;
 
 import javax.swing.JPanel;
 import subject.PersonalTimer;
 
 public abstract class DisplayClock extends JPanel implements Observer {
-   
-    @Override
-    public abstract void update(PersonalTimer time);
+
+   @Override
+   public abstract void update(PersonalTimer time);
 }
