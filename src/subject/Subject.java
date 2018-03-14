@@ -9,32 +9,31 @@
 
  Java : 1.8.0_161
  -----------------------------------------------------------------------------------
-*/
+ */
 package subject;
-
 
 import observer.Observer;
 
 public interface Subject {
-   
+
    /**
     * Adds an observer to the set of observers for this subject
-    * 
-    * @param o    : Observer to add
+    *
+    * @param o : Observer to add
     */
    public void attach(Observer o);
-   
+
    /**
     * Removes an observer to the set of observers for this subject
-    * 
-    * @param o    : Observer to remove
+    *
+    * @param o : Observer to remove
     */
    public void detach(Observer o);
-   
+
    /**
-    * notify all of its observers and then call the clearChanged method to indicate 
+    * notify all of its observers and then call the clearChanged method to indicate
     * that this object has no longer changed.
-    * 
+    *
     */
    public void notifyObservers();
 }

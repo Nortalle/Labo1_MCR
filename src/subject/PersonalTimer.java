@@ -36,7 +36,7 @@ public class PersonalTimer implements Subject {
                 time++;
                 notifyObservers();
             }
-        }, 10, 10);
+        }, 1000, 1000);
     }
     
     /**
